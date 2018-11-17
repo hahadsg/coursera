@@ -112,6 +112,21 @@ import FloatOps._
     assert(res, s"Body not found in the right sector")
   }
 
+  test("Fork with 4 empty quadrants") {
+    val nw = Empty(17.5f, 27.5f, 5f)
+    val ne = Empty(22.5f, 27.5f, 5f)
+    val sw = Empty(17.5f, 32.5f, 5f)
+    val se = Empty(22.5f, 32.5f, 5f)
+    val quad = Fork(nw, ne, sw, se)
+
+    assert(quad.centerX == 20f, s"${quad.centerX} should be 20f")
+    assert(quad.centerY == 30f, s"${quad.centerY} should be 30f")
+    assert(quad.mass ~= 0f, s"${quad.mass} should be 0f")
+    assert(quad.massX ~= 20f, s"${quad.massX} should be 20f")
+    assert(quad.massY ~= 30f, s"${quad.massY} should be 30f")
+    assert(quad.total == 0, s"${quad.total} should be 0")
+  }
+
 }
 
 object FloatOps {
