@@ -8,7 +8,7 @@ import com.sksamuel.scrimage.{Image, Pixel}
 object Visualization {
 
   val radius = 6371d // the sphere radius
-  val pValue = 2d // inverse distance weight p value
+  val pValue = 6d // inverse distance weight p value
 
   def distance(a: Location, b: Location): Double = {
     val delta_sigma =
