@@ -73,7 +73,7 @@ object Visualization2 {
       .map(Visualization.interpolateColor(colors, _))
       .map(color => Pixel(color.red, color.green, color.blue, pixelAlpha))
       .toArray
-    
+
     Image(imageWidth, imageHeight, pixels)
   }
 
